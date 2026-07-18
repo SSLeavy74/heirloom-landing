@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heirloom — Oral history, by telephone</title>
+<meta name="description" content="Heirloom calls your parent each week for a warm, unhurried conversation, and turns a lifetime of memories into a book and a recording your family keeps for good.">
+<!-- Unlisted while the pilot is a handful of families: shareable by direct link,
+     not findable by search. Remove this line to open it to inbound traffic. -->
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root{
+    color-scheme: light dark;
+    --paper:#e9e3d5; --paper-2:#f2ecdf; --edge:#d8cfba;
+    --ink:#26211b; --ink-soft:#5f5648;
+    --oxblood:#7e2b2b; --oxblood-ink:#f4ede0; --gilt:#9a7526;
+    --shadow: 20px 20px 60px rgba(38,33,27,.06);
+    --serif:"Palatino Linotype",Palatino,"Iowan Old Style","Book Antiqua",Georgia,"Times New Roman",serif;
+    --mono:"Courier New",ui-monospace,Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#1a1712; --paper-2:#241f18; --edge:#3a3227;
+      --ink:#ebe3d3; --ink-soft:#a99c85;
+      --oxblood:#d1705f; --oxblood-ink:#1a1712; --gilt:#c9a34e;
+      --shadow: 20px 20px 60px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="light"]{
+    color-scheme:light;
+    --paper:#e9e3d5; --paper-2:#f2ecdf; --edge:#d8cfba;
+    --ink:#26211b; --ink-soft:#5f5648;
+    --oxblood:#7e2b2b; --oxblood-ink:#f4ede0; --gilt:#9a7526;
+    --shadow: 20px 20px 60px rgba(38,33,27,.06);
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1a1712; --paper-2:#241f18; --edge:#3a3227;
+    --ink:#ebe3d3; --ink-soft:#a99c85;
+    --oxblood:#d1705f; --oxblood-ink:#1a1712; --gilt:#c9a34e;
+    --shadow: 20px 20px 60px rgba(0,0,0,.25);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0}
+  .page{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px}
+  .measure{max-width:60ch}
+  a{color:inherit}
+  h1,h2,h3{margin:0; font-weight:600; text-wrap:balance; line-height:1.12}
+
+  .label{
+    font-family:var(--mono); text-transform:uppercase; letter-spacing:.18em;
+    font-size:.7rem; color:var(--oxblood); font-weight:700;
+  }
+  .label.dim{color:var(--ink-soft)}
+
+  /* --- masthead --- */
+  header.mast{
+    position:sticky; top:0; z-index:20;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--edge);
+  }
+  .mast-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:1040px; margin:0 auto}
+  .brand{display:flex; align-items:baseline; gap:12px}
+  .brand b{font-size:1.4rem; letter-spacing:.02em; font-weight:600}
+  .brand .tag{font-family:var(--mono); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft)}
+  .mast-actions{display:flex; align-items:center; gap:10px}
+  .theme-toggle{
+    background:none; border:1px solid var(--edge); color:var(--ink-soft);
+    width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:.9rem; line-height:1;
+  }
+  .theme-toggle:hover{border-color:var(--oxblood); color:var(--oxblood)}
+
+  .btn{
+    display:inline-block; font-family:var(--mono); text-transform:uppercase;
+    letter-spacing:.12em; font-size:.72rem; font-weight:700;
+    padding:12px 20px; border-radius:2px; text-decoration:none; cursor:pointer;
+    border:1px solid var(--oxblood); background:var(--oxblood); color:var(--oxblood-ink);
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn.ghost{background:transparent; color:var(--oxblood)}
+  .btn.ghost:hover{background:color-mix(in srgb,var(--oxblood) 10%, transparent)}
+  .btn.small{padding:9px 15px}
+
+  /* --- hero --- */
+  .hero{padding:88px 0 40px}
+  .hero .eyebrow{margin-bottom:22px}
+  .hero h1{font-size:clamp(2.5rem,6vw,4.1rem); letter-spacing:-.01em}
+  .hero h1 em{font-style:italic; color:var(--oxblood)}
+  .hero p.lede{font-size:1.28rem; color:var(--ink-soft); margin:26px 0 0; max-width:34ch}
+  .hero .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px}
+  .hero .fineprint{font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; color:var(--ink-soft); margin-top:20px}
+
+  /* waveform sample card */
+  .clip{
+    margin-top:56px; background:var(--paper-2); border:1px solid var(--edge);
+    border-radius:4px; padding:26px 30px 22px; box-shadow:var(--shadow); max-width:640px;
+  }
+  .clip .clip-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:18px}
+  .waveform{display:flex; align-items:center; gap:3px; height:40px; margin:2px 0 20px}
+  .waveform span{width:3px; height:calc(var(--h,.4)*100%); min-height:2px; background:var(--oxblood); border-radius:2px; opacity:.85; transform-origin:center}
+  .clip blockquote{margin:0; font-size:1.5rem; line-height:1.4; font-style:italic}
+  .clip .attrib{font-family:var(--mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-top:16px}
+
+  /* --- generic section --- */
+  section{padding:64px 0; border-top:1px solid var(--edge)}
+  section h2{font-size:clamp(1.7rem,3.6vw,2.5rem); margin-top:14px; max-width:20ch}
+  .lead{font-size:1.18rem; color:var(--ink-soft); margin-top:20px; max-width:56ch}
+
+  /* the ache */
+  .ache p{font-size:1.32rem; line-height:1.55; max-width:32ch; margin:12px 0 0}
+  .ache .body{font-size:1.12rem; color:var(--ink-soft); max-width:54ch; margin-top:24px}
+
+  /* steps */
+  .steps{display:grid; gap:2px; margin-top:40px; background:var(--edge); border:1px solid var(--edge); border-radius:4px; overflow:hidden}
+  .step{background:var(--paper); padding:30px 28px; display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:start}
+  .step .no{font-family:var(--mono); font-size:1.5rem; font-weight:700; color:var(--oxblood); line-height:1}
+  .step h3{font-size:1.35rem}
+  .step p{margin:10px 0 0; color:var(--ink-soft); font-size:1.05rem}
+  @media(min-width:760px){ .steps{grid-template-columns:repeat(3,1fr)} }
+
+  /* honest / AI section */
+  .honest{background:var(--paper-2)}
+  .honest h2 em{font-style:italic; color:var(--oxblood)}
+  .honest .body{font-size:1.16rem; line-height:1.7; max-width:58ch; margin-top:24px}
+  .honest .body strong{color:var(--ink); font-weight:600}
+
+  /* keepsakes */
+  .keepsakes{display:grid; gap:22px; margin-top:40px}
+  @media(min-width:720px){ .keepsakes{grid-template-columns:1fr 1fr} }
+  .card{background:var(--paper-2); border:1px solid var(--edge); border-radius:4px; padding:30px}
+  .card h3{font-size:1.5rem; margin-top:12px}
+  .card p{color:var(--ink-soft); margin:14px 0 0; font-size:1.06rem}
+
+  /* promises */
+  .promises{border:1px solid var(--oxblood); border-radius:4px; margin-top:36px; padding:8px 30px 30px}
+  .promises ul{list-style:none; margin:0; padding:0}
+  .promises li{padding:22px 0; border-bottom:1px dashed var(--edge); display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:baseline}
+  .promises li:last-child{border-bottom:none}
+  .promises .mark{font-family:var(--mono); color:var(--oxblood); font-weight:700; font-size:.9rem; letter-spacing:.05em}
+  .promises li p{margin:0; font-size:1.1rem}
+
+  /* pilot card */
+  .pilot{background:var(--paper-2)}
+  .record{
+    border:1px solid var(--edge); border-radius:4px; background:var(--paper);
+    box-shadow:var(--shadow); margin-top:34px; overflow:hidden;
+  }
+  .record .rhead{background:var(--oxblood); color:var(--oxblood-ink); padding:14px 30px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.16em; font-size:.72rem; font-weight:700; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+  .record .rbody{padding:34px 30px}
+  .record .price{font-size:3rem; line-height:1; margin:0}
+  .record .price small{font-size:1rem; color:var(--ink-soft); font-family:var(--mono); letter-spacing:.04em}
+  .record ul.specs{list-style:none; padding:0; margin:22px 0 28px; display:grid; gap:10px}
+  .record ul.specs li{font-family:var(--mono); font-size:.82rem; letter-spacing:.03em; color:var(--ink-soft); padding-left:20px; position:relative}
+  .record ul.specs li::before{content:"—"; position:absolute; left:0; color:var(--oxblood)}
+
+  /* faq */
+  details{border-top:1px solid var(--edge); padding:18px 0}
+  details:last-of-type{border-bottom:1px solid var(--edge)}
+  summary{cursor:pointer; font-size:1.2rem; list-style:none; display:flex; justify-content:space-between; gap:16px; align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary .plus{font-family:var(--mono); color:var(--oxblood); transition:transform .2s ease}
+  details[open] summary .plus{transform:rotate(45deg)}
+  details p{color:var(--ink-soft); margin:14px 0 4px; max-width:60ch; font-size:1.06rem}
+
+  /* closing */
+  .closing{text-align:center; border-top:1px solid var(--edge)}
+  .closing h2{margin:0 auto; max-width:18ch}
+  .closing .lead{margin:22px auto 0}
+  .closing .cta-row{display:flex; justify-content:center; margin-top:30px}
+
+  footer{border-top:1px solid var(--edge); padding:40px 0 60px; color:var(--ink-soft)}
+  .foot-row{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center}
+  footer .tag{font-family:var(--mono); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase}
+  footer .disc{font-family:var(--mono); font-size:.64rem; letter-spacing:.04em; margin-top:22px; opacity:.75; max-width:60ch}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1; transform:none}
+  :focus-visible{outline:2px solid var(--oxblood); outline-offset:3px; border-radius:2px}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1; transform:none; transition:none}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="mast">
+    <div class="mast-row">
+      <div class="brand">
+        <b>Heirloom</b>
+        <span class="tag">Oral history, by telephone</span>
+      </div>
+      <div class="mast-actions">
+        <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">◐</button>
+        <a class="btn small" href="mailto:support@sbkinship.com?subject=Heirloom%20pilot%20%E2%80%94%20reserve%20a%20spot">Reserve a pilot</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero" style="border-top:none">
+      <div class="eyebrow label">For parents &amp; grandparents, 70 and up</div>
+      <h1>Their whole life, in their own voice — <em>while you can still ask.</em></h1>
+      <p class="lede">Heirloom calls your parent for a warm, unhurried conversation each week, and turns a lifetime of memories into a book and a recording your family keeps for good.</p>
+      <div class="cta-row">
+        <a class="btn" href="#pilot">Reserve a pilot spot</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+      <p class="fineprint">A patient weekly call · No apps · A book they'd be proud to have read aloud</p>
+
+      <figure class="clip reveal">
+        <div class="clip-head">
+          <span class="label dim">Recording · sample</span>
+          <span class="label dim">00:04:12</span>
+        </div>
+        <div class="waveform" aria-hidden="true"></div>
+        <blockquote>"We didn't have two nickels to rub together, but Mama kept us clean as Sunday."</blockquote>
+        <div class="attrib">From a Heirloom book · illustrative</div>
+      </figure>
+    </section>
+
+    <section class="ache reveal">
+      <div class="label">The problem</div>
+      <p>Every family means to write it down. Almost none do.</p>
+      <p class="body">You mean to sit them down with a recorder. You mean to ask your dad how he met your mom, about the war, about the house he grew up in. Then a birthday passes, then a year — and one day the stories are gone, and there's no one left to ask. Heirloom is the one who finally asks. Every week. Patiently. Before it's too late.</p>
+    </section>
+
+    <section id="how" class="reveal">
+      <div class="label">How it works</div>
+      <h2>Three steps. Your parent only does one of them.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="no">1</div>
+          <div>
+            <h3>A weekly call</h3>
+            <p>At a time you choose, we phone your parent for about 25 minutes. A warm interviewer named June asks about their life — and, the secret, actually listens, remembering every name and story from one week to the next.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="no">2</div>
+          <div>
+            <h3>Every word, kept</h3>
+            <p>Each conversation is recorded and written down. Nothing rushed, nothing lost. Your parent controls every topic — anything they'd rather not discuss, they simply leave be, and June moves on.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="no">3</div>
+          <div>
+            <h3>A keepsake, for good</h3>
+            <p>Afterward, their stories become a book in their own words, plus a short recording of favorite moments in their own voice. Yours to print, share, and read aloud for generations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="honest reveal">
+      <div class="label">Let's be honest</div>
+      <h2>Yes — the interviewer is an <em>artificial intelligence</em>. Here's why that's the gift.</h2>
+      <p class="body">A human interviewer gets tired, forgets, cancels, and would cost a small fortune for a year of weekly hours. June never does. She has <strong>infinite patience</strong> for a long story, never interrupts, never checks the clock, and calls <strong>every single week without fail</strong>. She remembers the name of every cousin and the make of every car your parent mentions — and brings them up later, so your parent feels genuinely heard. And a <strong>real person</strong> from Heirloom listens to every call and writes the book by hand. The care is human. The patience is inexhaustible.</p>
+    </section>
+
+    <section class="reveal">
+      <div class="label">What your family keeps</div>
+      <h2>Two things a photograph can't hold.</h2>
+      <div class="keepsakes">
+        <div class="card">
+          <div class="label">The book</div>
+          <h3>Their words, in chapters</h3>
+          <p>A book of their life told in their own phrasing — not smoothed into generic prose. If they say "we was," the book says "we was." The kind of thing read aloud at anniversaries, and one day, at a funeral.</p>
+        </div>
+        <div class="card">
+          <div class="label">The voice</div>
+          <h3>Five minutes of them</h3>
+          <p>A short recording cut from the calls — their actual laugh, their actual way of telling it. The page a family frames; the file a grandchild plays long after.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="label">Our promises</div>
+      <h2>A keepsake, not a technology stunt.</h2>
+      <div class="promises">
+        <ul>
+          <li><span class="mark">i.</span><p>We will <strong>never</strong> create a synthetic "clone," voice double, or avatar of your parent. We preserve their voice — we do not imitate it.</p></li>
+          <li><span class="mark">ii.</span><p>Your recordings are <strong>never</strong> sold, shared outside your family, or used to train any AI.</p></li>
+          <li><span class="mark">iii.</span><p>Your parent controls the map. Any topic, off — any time. Delete anything, ever, and it's gone.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pilot" class="pilot reveal">
+      <div class="label">The pilot</div>
+      <h2>Try it with one parent, this season.</h2>
+      <p class="lead">We're running a small first group of families. Four weekly calls and your finished keepsakes — at a fraction of what it will cost later — in exchange for your honest reaction to what comes back.</p>
+      <div class="record">
+        <div class="rhead"><span>Pilot enrollment</span><span>Limited to a handful of families</span></div>
+        <div class="rbody">
+          <p class="price">$99 <small>/ complete pilot</small></p>
+          <ul class="specs">
+            <li>Four warm weekly phone calls, ~25 minutes each</li>
+            <li>A keepsake book in your parent's own words</li>
+            <li>A short audio recording in their own voice</li>
+            <li>Simple consent, full privacy, delete anything on request</li>
+          </ul>
+          <a class="btn" href="mailto:support@sbkinship.com?subject=Heirloom%20pilot%20%E2%80%94%20reserve%20a%20spot&amp;body=I'd%20like%20to%20reserve%20a%20pilot%20spot.%20My%20parent's%20first%20name%3A%20____%20%C2%B7%20Best%20number%20to%20reach%20me%3A%20____">Reserve a pilot spot</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="label">Questions families ask</div>
+      <h2>The honest answers.</h2>
+      <div style="margin-top:24px">
+        <details>
+          <summary>What does my parent have to do? <span class="plus">+</span></summary>
+          <p>Answer the phone. That's the whole job. No apps, no computer, no setup — we handle everything. They just talk.</p>
+        </details>
+        <details>
+          <summary>Isn't it strange to be interviewed by an AI? <span class="plus">+</span></summary>
+          <p>Most people forget within a minute or two — June is warm and genuinely curious, and she's honest about what she is if anyone asks. What they remember is the feeling of being truly listened to.</p>
+        </details>
+        <details>
+          <summary>What about their privacy? <span class="plus">+</span></summary>
+          <p>Both you and your parent sign a simple one-page consent. Calls are recorded only to make your keepsakes, stored privately, and deleted whenever you ask. See our promises above.</p>
+        </details>
+        <details>
+          <summary>What if they're hard of hearing? <span class="plus">+</span></summary>
+          <p>June speaks slowly and clearly, repeats and rephrases gladly, and never rushes or talks over a pause. The calls are built for exactly this.</p>
+        </details>
+        <details>
+          <summary>Can they refuse a question? <span class="plus">+</span></summary>
+          <p>Always. "Let's leave that one" is a complete answer, and June moves on warmly, without making it awkward. The stories are theirs to give.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="closing reveal">
+      <h2>The stories are still here. For now.</h2>
+      <p class="lead">Reserve a pilot, and give your family the one thing photographs can't — their voice, and the stories behind it.</p>
+      <div class="cta-row"><a class="btn" href="#pilot">Reserve a pilot spot</a></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-row">
+        <div class="brand"><b>Heirloom</b></div>
+        <span class="tag">A pilot program · support@sbkinship.com</span>
+      </div>
+      <p class="disc">Sample stories shown are illustrative composites, not real clients. Heirloom records conversations only to produce a family's own keepsakes, with the consent of both the family and the storyteller.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // waveform — voice made visible (deterministic, static; no motion needed)
+  (function(){
+    var wf = document.querySelector('.waveform');
+    if(!wf) return;
+    var n = 76;
+    for(var i=0;i<n;i++){
+      var s = document.createElement('span');
+      var h = 0.22 + Math.abs(Math.sin(i*0.55)*0.45 + Math.sin(i*0.17+1)*0.32 + Math.sin(i*1.3)*0.18);
+      s.style.setProperty('--h', Math.min(1, h).toFixed(2));
+      wf.appendChild(s);
+    }
+  })();
+
+  // scroll reveal
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  // theme toggle (stamps data-theme so it wins over the media query both ways)
+  (function(){
+    var root = document.documentElement;
+    var btn = document.querySelector('.theme-toggle');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var cur = root.getAttribute('data-theme');
+      if(!cur){ cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+      root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+</body>
+</html>
