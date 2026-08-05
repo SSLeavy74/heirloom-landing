@@ -56,7 +56,7 @@
 
   .label{
     font-family:var(--mono); text-transform:uppercase; letter-spacing:.18em;
-    font-size:.7rem; color:var(--oxblood); font-weight:700;
+    font-size:.72rem; color:var(--oxblood); font-weight:700;
   }
   .label.dim{color:var(--ink-soft)}
 
@@ -70,7 +70,7 @@
   .mast-row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px; max-width:1040px; margin:0 auto}
   .brand{display:flex; align-items:baseline; gap:12px}
   .brand b{font-size:1.4rem; letter-spacing:.02em; font-weight:600}
-  .brand .tag{font-family:var(--mono); font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft)}
+  .brand .tag{font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft)}
   .mast-actions{display:flex; align-items:center; gap:10px}
   .theme-toggle{
     background:none; border:1px solid var(--edge); color:var(--ink-soft);
@@ -97,7 +97,7 @@
   .hero h1 em{font-style:italic; color:var(--oxblood)}
   .hero p.lede{font-size:1.28rem; color:var(--ink-soft); margin:26px 0 0; max-width:34ch}
   .hero .cta-row{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px}
-  .hero .fineprint{font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; color:var(--ink-soft); margin-top:20px}
+  .hero .fineprint{font-family:var(--mono); font-size:.72rem; letter-spacing:.06em; color:var(--ink-soft); margin-top:20px}
 
   /* waveform sample card */
   .clip{
@@ -116,21 +116,21 @@
   .lead{font-size:1.18rem; color:var(--ink-soft); margin-top:20px; max-width:56ch}
 
   /* the ache */
-  .ache p{font-size:1.32rem; line-height:1.55; max-width:32ch; margin:12px 0 0}
-  .ache .body{font-size:1.12rem; color:var(--ink-soft); max-width:54ch; margin-top:24px}
+  .ache p{font-size:1.28rem; line-height:1.55; max-width:32ch; margin:12px 0 0}
+  .ache .body{font-size:1.08rem; color:var(--ink-soft); max-width:54ch; margin-top:24px}
 
   /* steps */
   .steps{display:grid; gap:2px; margin-top:40px; background:var(--edge); border:1px solid var(--edge); border-radius:4px; overflow:hidden}
   .step{background:var(--paper); padding:30px 28px; display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:start}
   .step .no{font-family:var(--mono); font-size:1.5rem; font-weight:700; color:var(--oxblood); line-height:1}
   .step h3{font-size:1.35rem}
-  .step p{margin:10px 0 0; color:var(--ink-soft); font-size:1.05rem}
+  .step p{margin:10px 0 0; color:var(--ink-soft); font-size:1.08rem}
   @media(min-width:760px){ .steps{grid-template-columns:repeat(3,1fr)} }
 
   /* honest / AI section */
   .honest{background:var(--paper-2)}
   .honest h2 em{font-style:italic; color:var(--oxblood)}
-  .honest .body{font-size:1.16rem; line-height:1.7; max-width:58ch; margin-top:24px}
+  .honest .body{font-size:1.18rem; line-height:1.7; max-width:58ch; margin-top:24px}
   .honest .body strong{color:var(--ink); font-weight:600}
 
   /* keepsakes */
@@ -138,7 +138,20 @@
   @media(min-width:720px){ .keepsakes{grid-template-columns:1fr 1fr} }
   .card{background:var(--paper-2); border:1px solid var(--edge); border-radius:4px; padding:30px}
   .card h3{font-size:1.5rem; margin-top:12px}
-  .card p{color:var(--ink-soft); margin:14px 0 0; font-size:1.06rem}
+  .card p{color:var(--ink-soft); margin:14px 0 0; font-size:1.08rem}
+
+  /* the book, shown — a fine-press page mock (illustrative). It earns the artifact shadow: it is a
+     thing a family would hold. Synthetic Margaret only; never a real client's words. */
+  .bookpage{margin-top:40px; max-width:560px}
+  .leaf{background:var(--paper-2); border:1px solid var(--edge); border-radius:4px; box-shadow:var(--shadow); padding:44px 48px 30px; position:relative}
+  .leaf .runhead{display:flex; justify-content:space-between; gap:12px; font-family:var(--mono); font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); border-bottom:1px solid var(--edge); padding-bottom:12px; margin-bottom:28px}
+  .leaf .chap{text-align:center; margin-bottom:22px}
+  .leaf .chap .no{display:block; font-family:var(--mono); text-transform:uppercase; letter-spacing:.28em; font-size:.68rem; color:var(--oxblood); margin-bottom:10px}
+  .leaf .chap h3{font-size:1.7rem}
+  .leaf .bp-body{font-size:1.08rem; line-height:1.72; margin:0}
+  .leaf .dropcap{float:left; font-size:3.3rem; line-height:.78; font-weight:600; color:var(--oxblood); padding:4px 12px 0 0}
+  .leaf .folio{text-align:center; font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; color:var(--ink-soft); margin-top:26px}
+  .bp-cap{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:14px}
 
   /* promises */
   .promises{border:1px solid var(--oxblood); border-radius:4px; margin-top:36px; padding:8px 30px 30px}
@@ -146,7 +159,7 @@
   .promises li{padding:22px 0; border-bottom:1px dashed var(--edge); display:grid; grid-template-columns:auto 1fr; gap:18px; align-items:baseline}
   .promises li:last-child{border-bottom:none}
   .promises .mark{font-family:var(--mono); color:var(--oxblood); font-weight:700; font-size:.9rem; letter-spacing:.05em}
-  .promises li p{margin:0; font-size:1.1rem}
+  .promises li p{margin:0; font-size:1.08rem; max-width:62ch}
 
   /* pilot card */
   .pilot{background:var(--paper-2)}
@@ -158,18 +171,22 @@
   .record .rbody{padding:34px 30px}
   .record .price{font-size:3rem; line-height:1; margin:0}
   .record .price small{font-size:1rem; color:var(--ink-soft); font-family:var(--mono); letter-spacing:.04em}
+  .record .pricenote{font-size:.92rem; line-height:1.6; color:var(--ink-soft); margin:14px 0 0; max-width:46ch}
   .record ul.specs{list-style:none; padding:0; margin:22px 0 28px; display:grid; gap:10px}
   .record ul.specs li{font-family:var(--mono); font-size:.82rem; letter-spacing:.03em; color:var(--ink-soft); padding-left:20px; position:relative}
   .record ul.specs li::before{content:"—"; position:absolute; left:0; color:var(--oxblood)}
+  .record .ask{font-family:var(--mono); font-size:.72rem; letter-spacing:.04em; margin:14px 0 0}
+  .record .ask a{color:var(--ink-soft); text-decoration:underline; text-underline-offset:3px}
+  .record .ask a:hover{color:var(--oxblood)}
 
   /* faq */
   details{border-top:1px solid var(--edge); padding:18px 0}
   details:last-of-type{border-bottom:1px solid var(--edge)}
-  summary{cursor:pointer; font-size:1.2rem; list-style:none; display:flex; justify-content:space-between; gap:16px; align-items:center}
+  summary{cursor:pointer; font-size:1.18rem; list-style:none; display:flex; justify-content:space-between; gap:16px; align-items:center}
   summary::-webkit-details-marker{display:none}
   summary .plus{font-family:var(--mono); color:var(--oxblood); transition:transform .2s ease}
   details[open] summary .plus{transform:rotate(45deg)}
-  details p{color:var(--ink-soft); margin:14px 0 4px; max-width:60ch; font-size:1.06rem}
+  details p{color:var(--ink-soft); margin:14px 0 4px; max-width:60ch; font-size:1.08rem}
 
   /* closing */
   .closing{text-align:center; border-top:1px solid var(--edge)}
@@ -179,8 +196,8 @@
 
   footer{border-top:1px solid var(--edge); padding:40px 0 60px; color:var(--ink-soft)}
   .foot-row{display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; align-items:center}
-  footer .tag{font-family:var(--mono); font-size:.66rem; letter-spacing:.14em; text-transform:uppercase}
-  footer .disc{font-family:var(--mono); font-size:.64rem; letter-spacing:.04em; margin-top:22px; opacity:.75; max-width:60ch}
+  footer .tag{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase}
+  footer .disc{font-family:var(--mono); font-size:.72rem; letter-spacing:.04em; margin-top:22px; opacity:.75; max-width:60ch}
 
   .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1; transform:none}
@@ -190,6 +207,7 @@
     .btn{transition:none}
   }
 </style>
+<script>/* apply a saved theme before first paint, so a returning visitor sees no flash */try{var _t=localStorage.getItem('heirloom-theme');if(_t)document.documentElement.setAttribute('data-theme',_t);}catch(e){}</script>
 </head>
 <body>
 
@@ -202,7 +220,7 @@
       </div>
       <div class="mast-actions">
         <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">◐</button>
-        <a class="btn small" href="mailto:support@sbkinship.com?subject=Heirloom%20pilot%20%E2%80%94%20reserve%20a%20spot">Reserve a pilot</a>
+        <a class="btn small" href="#pilot">Reserve a pilot</a>
       </div>
     </div>
   </header>
@@ -221,12 +239,12 @@
 
       <figure class="clip reveal">
         <div class="clip-head">
-          <span class="label dim">Recording · sample</span>
-          <span class="label dim">00:04:12</span>
+          <span class="label dim">The voice keepsake</span>
+          <span class="label dim">illustration</span>
         </div>
         <div class="waveform" aria-hidden="true"></div>
         <blockquote>"We didn't have two nickels to rub together, but Mama kept us clean as Sunday."</blockquote>
-        <div class="attrib">From a Heirloom book · illustrative</div>
+        <div class="attrib">Illustrative sample · not a real client</div>
       </figure>
     </section>
 
@@ -267,7 +285,7 @@
     <section class="honest reveal">
       <div class="label">Let's be honest</div>
       <h2>Yes — the interviewer is an <em>artificial intelligence</em>. Here's why that's the gift.</h2>
-      <p class="body">A human interviewer gets tired, forgets, cancels, and would cost a small fortune for a year of weekly hours. June never does. She has <strong>infinite patience</strong> for a long story, never interrupts, never checks the clock, and calls <strong>every single week without fail</strong>. She remembers the name of every cousin and the make of every car your parent mentions — and brings them up later, so your parent feels genuinely heard. And a <strong>real person</strong> from Heirloom listens to every call and writes the book by hand. The care is human. The patience is inexhaustible.</p>
+      <p class="body">A human interviewer gets tired, forgets, cancels, and would cost a small fortune for a year of weekly hours. June never does. She has <strong>infinite patience</strong> for a long story, never interrupts, never checks the clock, and calls <strong>every single week without fail</strong>. She remembers the name of every cousin and the make of every car your parent mentions — and brings them up later, so your parent feels genuinely heard. The patience is inexhaustible.</p>
     </section>
 
     <section class="reveal">
@@ -285,6 +303,15 @@
           <p>A short recording cut from the calls — their actual laugh, their actual way of telling it. The page a family frames; the file a grandchild plays long after.</p>
         </div>
       </div>
+      <figure class="bookpage reveal">
+        <div class="leaf">
+          <div class="runhead"><span>Heirloom</span><span>Margaret · in her own words</span></div>
+          <div class="chap"><span class="no">Chapter Two</span><h3>Clean as Sunday</h3></div>
+          <p class="bp-body"><span class="dropcap">W</span>e didn't have two nickels to rub together, but Mama kept us clean as Sunday. She'd have us at the washtub before the sun was properly up, and woe betide the child who turned up to church with a ring round their collar. We was poor, she'd say — but we wasn't dirty, like that settled the whole matter. And I suppose it did.</p>
+          <div class="folio">— 14 —</div>
+        </div>
+        <figcaption class="bp-cap">A sample page · illustrative, not a real client</figcaption>
+      </figure>
     </section>
 
     <section class="reveal">
@@ -302,18 +329,27 @@
     <section id="pilot" class="pilot reveal">
       <div class="label">The pilot</div>
       <h2>Try it with one parent, this season.</h2>
-      <p class="lead">We're running a small first group of families. Four weekly calls and your finished keepsakes — at a fraction of what it will cost later — in exchange for your honest reaction to what comes back.</p>
+      <p class="lead">We're running a small first group of families. Four weekly calls and your finished keepsakes, in exchange for your honest reaction to what comes back.</p>
       <div class="record">
-        <div class="rhead"><span>Pilot enrollment</span><span>Limited to a handful of families</span></div>
+        <div class="rhead"><span>Pilot enrollment</span><span>Five families</span></div>
         <div class="rbody">
           <p class="price">$99 <small>/ complete pilot</small></p>
+          <p class="pricenote">Plus sales tax where your state requires it — added at checkout, calculated from your billing address, and nothing at all in some states. The first five families pay $99. After that it's $1,200. You'd be going first, and I'll learn as much from you as you get from me — I'd rather tell you the real price now than surprise you with it later.</p>
           <ul class="specs">
             <li>Four warm weekly phone calls, ~25 minutes each</li>
             <li>A keepsake book in your parent's own words</li>
             <li>A short audio recording in their own voice</li>
             <li>Simple consent, full privacy, delete anything on request</li>
+            <li>Cancel any time before the first call — full refund</li>
           </ul>
-          <a class="btn" href="mailto:support@sbkinship.com?subject=Heirloom%20pilot%20%E2%80%94%20reserve%20a%20spot&amp;body=I'd%20like%20to%20reserve%20a%20pilot%20spot.%20My%20parent's%20first%20name%3A%20____%20%C2%B7%20Best%20number%20to%20reach%20me%3A%20____">Reserve a pilot spot</a>
+          <!-- Live Stripe Payment Link, $99 pilot. This is NOT the same link as
+               the $1,200 season on heirloom.sbkinship.com — that one is
+               .../7sY9AS4PV1bn5Q7cwt1Jm00 and charging it here would take twelve
+               times the price on the line above. Check the amount on the
+               checkout page, not the URL, before ever swapping it.
+               Same tab: Stripe redirects to /thanks.html afterwards. -->
+          <a class="btn" data-cta="reserve" href="https://buy.stripe.com/14AdR896baLXfqH2VT1Jm01">Reserve a pilot spot</a>
+          <p class="ask"><a href="mailto:support@sbkinship.com?subject=Heirloom%20pilot%20%E2%80%94%20a%20question">Not ready? Ask us anything first &rarr;</a></p>
         </div>
       </div>
     </section>
@@ -346,7 +382,7 @@
     </section>
 
     <section class="closing reveal">
-      <h2>The stories are still here. For now.</h2>
+      <h2>The stories are still here. Let's keep them.</h2>
       <p class="lead">Reserve a pilot, and give your family the one thing photographs can't — their voice, and the stories behind it.</p>
       <div class="cta-row"><a class="btn" href="#pilot">Reserve a pilot spot</a></div>
     </section>
@@ -357,7 +393,7 @@
     <div class="wrap">
       <div class="foot-row">
         <div class="brand"><b>Heirloom</b></div>
-        <span class="tag">A pilot program · support@sbkinship.com</span>
+        <span class="tag">Heirloom is a service of S&amp;B Kinship, LLC · support@sbkinship.com</span>
       </div>
       <p class="disc">Sample stories shown are illustrative composites, not real clients. Heirloom records conversations only to produce a family's own keepsakes, with the consent of both the family and the storyteller.</p>
     </div>
@@ -396,7 +432,9 @@
     btn.addEventListener('click', function(){
       var cur = root.getAttribute('data-theme');
       if(!cur){ cur = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
-      root.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try{ localStorage.setItem('heirloom-theme', next); }catch(e){}
     });
   })();
 </script>
